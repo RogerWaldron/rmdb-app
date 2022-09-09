@@ -1,34 +1,52 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [create-next-app](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Movie Database
 
-First, run the development server:
+Idea return suggested movies based on users favorites
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+Support queries like:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Actors
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+> Have Brad Pitt and Edward Norton ever been in a movie together?
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+`URL: /discover/movie?with_people=287,819&sort_by=vote_average.desc`
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+> What are the highest rated science fiction movies that Tom Cruise has been in?
 
-## Learn More
+`URL: /discover/movie?with_genres=878&with_cast=500&sort_by=vote_average.desc`
 
-To learn more about Next.js, take a look at the following resources:
+### Directors
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> Has David Fincher ever worked with Rooney Mara?
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+`URL: /discover/movie?with_people=108916,7467&sort_by=popularity.desc`
 
-## Deploy on Vercel
+### Movies
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> What are the most popular movies?
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+`URL: /discover/movie?sort_by=popularity.desc`
+
+> What are the best dramas that were released this year?
+
+`URL: /discover/movie?with_genres=18&primary_release_year=2022`
+
+### Tech Stack:
+
+- NextJS
+- React
+- React-query
+- Tailwind CSS
+- Typescript
+
+### 3rd Party Apis
+
+- [TMDB](https://www.themoviedb.org/)
+
+Supported routes:
+/search,
+/discover,
+/find
+
+[API Documentation](https://www.themoviedb.org/documentation/api)
