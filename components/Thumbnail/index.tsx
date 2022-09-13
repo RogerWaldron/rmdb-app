@@ -4,7 +4,11 @@ type Props = {
   imgUrl: string;
 };
 
+<<<<<<< HEAD
 const ThumbNail = ({ imgUrl }: Props) => {
+=======
+const Thumbnail = ({ imgUrl }: Props) => {
+>>>>>>> 901fa99 (feat: :sparkles: Add Thumbnail component for movie posters)
   return (
     <div className="relative h-60">
       <Image
@@ -18,4 +22,8 @@ const ThumbNail = ({ imgUrl }: Props) => {
   );
 };
 
+<<<<<<< HEAD
 export default ThumbNail;
+=======
+export default Thumbnail;
+>>>>>>> 901fa99 (feat: :sparkles: Add Thumbnail component for movie posters)
