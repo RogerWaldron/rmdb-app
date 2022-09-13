@@ -50,7 +50,7 @@ const Home: NextPage = () => {
                         : ""
                     }
                     title={movie.original_title}
-                    subtitle={movie.overview}
+                    year={movie.release_date}
                   />
                 </div>
               ))
