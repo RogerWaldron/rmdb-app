@@ -11,7 +11,7 @@ const Card = ({ imgUrl, title, year }: Props) => (
     <div className="relative h-full">
       <Thumbnail imgUrl={imgUrl} />
       <div className="absolute bottom-0 w-full px-4 py-2 rounded-b-xl bg-zinc-800">
-        <h2 className="text-sm font-bold text-gray-300 truncate">{title}</h2>
+        <h2 className="text-sm text-center text-gray-200 truncate">{title}</h2>
         {year ? (
           <p className="text-xs text-center text-gray-400 truncate">{year}</p>
         ) : null}
