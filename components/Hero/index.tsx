@@ -19,6 +19,7 @@ const Hero = ({ imgUrl, title, text }: Props) => (
       objectFit="cover"
       objectPosition="center"
       alt="hero image"
+      layout="fill"
       src={imgUrl}
     />
   </div>
