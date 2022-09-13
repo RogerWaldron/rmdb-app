@@ -5,13 +5,20 @@ type Props = {
   setQuery: React.Dispatch<React.SetStateAction<string>>;
 };
 
+const TIME = 250;
+
 const SearchInput = ({ setQuery }: Props) => {
   const [text, setText] = React.useState("");
+  const timer = React.useRef<NodeJS.Timeout>();
 
   const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     setText(value);
-    setQuery(value);
+
+    clearTimeout(timer.current);
+    timer.current = setTimeout(() => {
+      setQuery(value);
+    }, TIME);
   };
 
   return (
