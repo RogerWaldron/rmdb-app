@@ -1,7 +1,13 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Header = () => (
+import SearchInput from "@/components/SearchInput";
+
+type Props = {
+  setQuery?: React.Dispatch<React.SetStateAction<string>>;
+};
+
+const Header = ({ setQuery }: Props) => (
   <div className="sticky flex w-full h-20 z-999 bg-zinc-900">
     <div className="flex justify-between w-full h-full px-4 max-w-7xl ">
       <Link href="/">
@@ -14,6 +20,11 @@ const Header = () => (
           />
         </div>
       </Link>
+      {setQuery ? (
+        <div className="relative flex items-center">
+          <SearchInput setQuery={setQuery} />
+        </div>
+      ) : null}
     </div>
   </div>
 );
