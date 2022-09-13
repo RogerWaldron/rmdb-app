@@ -8,18 +8,26 @@ type Props = {
 const SearchInput = ({ setQuery }: Props) => {
   const [text, setText] = React.useState("");
 
+  const handleInput = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setText(value);
+    setQuery(value);
+  };
+
   return (
     <>
       <input
-        className="h-10 text-white rounded-full text-md focus:outline-none focus:border focus:border-solid bg-zinc-700 pr-14 md:w-96"
+        className="h-10 pl-4 pr-12 placeholder-gray-500 rounded-full text-zinc-400 text-md focus:outline-none focus:border focus:border-solid bg-zinc-700 md:w-96"
         type="text"
         placeholder="Search movie"
         value={text}
-        onChange={(e) => setText(e.target.value)}
+        onChange={handleInput}
       />
-      <div className="absolute right-4 top-8">
+      <div className="absolute text-zinc-500 right-4 top-7">
         <IconSearch />
       </div>
     </>
   );
 };
+
+export default SearchInput;
