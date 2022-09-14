@@ -4,7 +4,7 @@ const Spinner = () => (
   <div className="flex items-center justify-center m-8">
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className="w-12 h-12 animate-spin icon icon-tabler icon-tabler-rotate-clockwise-2"
+      className="w-12 h-12 motion-reduce:animate-spin icon icon-tabler icon-tabler-rotate-clockwise-2"
       width="24"
       height="24"
       viewBox="0 0 24 24"
